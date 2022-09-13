@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * pri t_last_digit - print last digit
+ * print_last_digit - print last digit
  * @n: number to compute last digit for
+ *
  * Return: last digit
  */
 
