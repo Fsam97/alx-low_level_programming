@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define LARGEST 10000000000
+
 /**
  * main - prints the first 98 fibonacci numbers
  *
