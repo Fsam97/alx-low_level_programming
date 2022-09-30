@@ -7,6 +7,9 @@
  * @argv: pointer to the parameter passed
  *
  * Return: 0 if success
+ *
+ * Created by: Maconi Samuel
+ * cc: 30th September, 2022
  */
 
 int main(int argc, char *argv[])
@@ -17,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (argv[i][j] > '9')
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("ERROR\n");
 				exit(EXIT_FAILURE);
