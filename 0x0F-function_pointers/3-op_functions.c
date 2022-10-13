@@ -1,33 +1,67 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "3-calc.h"
 
 /**
- * get_op_func - is a function that get an operation
- * @s: operator input
- * Return: function result
+ * op_add - addition operation
+ * @a: first term
+ * @b: second term
+ *
+ * Return: result
  */
-int (*get_op_func(char *s))(int, int)
-{
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i = 0;
 
-	while (ops[i].op)
-	{
-		if (strcmp(s, ops[i].op) == 0)
-		{
-			return (ops[i].f);
-		}
-		i++;
-	}
-	printf("Error\n");
-	exit(99);
+int op_add(int a, int b)
+{
+	return (a + b);
+}
+
+/**
+ * op_sub - subtraction operation
+ * @a: first term
+ * @b: second term
+ *
+ * Return: result
+ */
+
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * op_mul - multiplication operation
+ * @a: first term
+ * @b: second term
+ *
+ * Return: result
+ */
+
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * op_div - division operation
+ * @a: first term
+ * @b: second term
+ *
+ * Return: result
+ */
+
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+
+/**
+ * op_mod - modulo operation
+ * @a: first term
+ * @b: second term
+ *
+ * Return: result
+ */
+
+int op_mod(int a, int b)
+{
+	return (a % b);
 }
