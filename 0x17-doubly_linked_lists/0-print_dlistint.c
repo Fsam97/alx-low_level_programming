@@ -1,20 +1,29 @@
 #include "lists.h"
 
 /**
- * print_dlistint - Prints all the elements of a dlistint_t list.
- * @h: The head of the dlistint_t list.
- *
- * Return: The number of nodes in the list.
+ * print_dlistint -  prints all the elements of a dlistint_t list.
+ * @h: the double linkedlist
+ * Return: the number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t nodes = 0;
+	int count;
+	dlistint_t *tranverse, *holder;
 
+	if (!h)
+		return (0);
+	tranverse = malloc(sizeof(dlistint_t));
+	tranverse->n = h->n;
+	tranverse->next = h->next;
+	tranverse->prev = h->prev;
+	holder = tranverse;
+	count = 0;
+	while (tranverse)
 	{
-		nodes++;
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", tranverse->n);
+		tranverse = tranverse->next;
+		++count;
 	}
-
-	return (nodes);
+	free(holder);
+	return (count);
 }
